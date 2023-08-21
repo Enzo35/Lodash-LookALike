@@ -48,9 +48,9 @@ class _ {
         return [].concat(...arr);
     }
 
-    // The intersect method returns the an array with the same elementes of two array
+    // The intersection method returns the an array with the same elementes of two array
     // This method only checks the first level of the arraygi
-    static intersect(...arrays){
+    static intersection(...arrays){
         if (arrays.length === 0){
             return [];
         }
@@ -58,12 +58,31 @@ class _ {
         let newArr = arrays.reduce((prev, curr) => prev.filter((elem) => curr.includes(elem)))
         return [...new Set(newArr)]
     }
+
+    // The remove method returns a array with elements that satifies a condition AND remove those elementes from the original array
+    static remove(arr, cond){
+        let truthy = arr.filter(cond);
+        for(let i of truthy){
+            let n = arr.indexOf(i);
+            arr.splice(n, 1);
+        }
+        return truthy;
+    }
+
+    // The union method returns a array of unique values between two or more arrays
+    static union(arrays){
+        let newArr = [];
+        for(let i of arrays){
+            newArr.push(...i);
+        }
+        return [...new Set(newArr)]
+    }
 }
 
-let arr = [['sss','dddd',[112,55]],'sssss',0];
+let arr = [['sss','dddd',[112,55]],'sssss',0, 44, 56];
 
-let arr2 = [['sss','aaa',[112,55]],'sssszzs',0];
+let arr2 = [['sss','aaa',[112,55]],'sssszzs'];
 
-console.log(_.intersect(arr, arr2));
+console.log(_.remove(arr, arr2));
 
-//console.log(arr)
+console.log(arr)
