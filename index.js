@@ -1,4 +1,5 @@
 class _ {
+        // ARRAY METHODS
     // The chunk method divides the content of an array into groups
     static chunk(arr, size=1){
         let newArr = [];
@@ -75,7 +76,13 @@ class _ {
         for(let i of arrays){
             newArr.push(...i);
         }
-        return [...new Set(newArr)]
+        return [...new Set(newArr)];
+    }
+
+        // COLLECTION METHODS
+    // The filter method returns an array of elements that satisfy a condition, but doesn't alter the orinal array
+    static filter(coll, cond){
+        return coll.filter(cond);
     }
 }
 
