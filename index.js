@@ -80,16 +80,57 @@ class _ {
     }
 
         // COLLECTION METHODS
-    // The filter method returns an array of elements that satisfy a condition, but doesn't alter the orinal array
+    // The filter method returns an array of elements that satisfies a condition, but doesn't alter the orinal array
     static filter(coll, cond){
         return coll.filter(cond);
     }
+
+    // The find method returns the first element that satifies a condition
+    static find(coll, cond, fromIndex=0){
+        let newColl = coll.slice(fromIndex, coll.length);
+        return newColl.find(cond);
+    }
+
+    // The partition method returns an array with two elements, the first is a array with elements that satisfies a condition, the second is an array of elements the didn't
+    static partition(coll, cond){
+        let truthy = coll.filter(cond);
+        let falsy = [...coll];
+
+        for(let i of truthy){
+            let n = falsy.indexOf(i);
+            falsy.splice(n, 1);
+        }
+        return [truthy, falsy];
+    }
+
+    // The shuffle method returns an shuffled array using the Fisher-Yates shuffle
+    static shuffle(coll){
+        function fisherYates(arr=[...coll], shuffled=[], length=coll.length){
+            if(length === 0){
+                return shuffled;
+            }
+
+            let rand = Math.floor( Math.random() * (length - 1));
+            console.log(rand, length);
+            console.log(arr[0]);
+            shuffled.push(arr[rand]);
+
+            length -= 1;
+
+            arr.splice(rand, 1);
+
+            return fisherYates(arr, shuffled, length);
+        }
+        return fisherYates();
+    }
+
+        // MATH METHODS
 }
 
-let arr = [['sss','dddd',[112,55]],'sssss',0, 44, 56];
+let arr = ['sss','dddd',112,55,'sssss',0, 44, 56];
 
 let arr2 = [['sss','aaa',[112,55]],'sssszzs'];
 
-console.log(_.remove(arr, arr2));
+console.log(_.shuffle(arr));
 
 console.log(arr)
