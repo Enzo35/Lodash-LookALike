@@ -125,12 +125,17 @@ class _ {
     }
 
         // MATH METHODS
+    // The mean method returns the average value of the items in an array
+    static mean(arr){
+        let sum = arr.reduce((acc, curr) => {return parseInt(acc) + parseInt(curr)}, 0);
+        return sum / arr.length;
+    }
 }
 
 let arr = ['sss','dddd',112,55,'sssss',0, 44, 56];
 
-let arr2 = [['sss','aaa',[112,55]],'sssszzs'];
+let arr2 = ['4343','324',112,55,'2322'];
 
-console.log(_.shuffle(arr));
+console.log(_.mean(arr2));
 
 console.log(arr)
