@@ -130,12 +130,22 @@ class _ {
         let sum = arr.reduce((acc, curr) => {return parseInt(acc) + parseInt(curr)}, 0);
         return sum / arr.length;
     }
+
+    // The max method returns the maximum value in an array
+    static max(arr){
+        return Math.max(...arr);
+    }
+
+    // The min method return the minimum value in an array
+    static min(arr){
+        return Math.min(...arr);
+    }
 }
 
 let arr = ['sss','dddd',112,55,'sssss',0, 44, 56];
 
 let arr2 = ['4343','324',112,55,'2322'];
 
-console.log(_.mean(arr2));
+console.log(_.max(arr2));
 
 console.log(arr)
