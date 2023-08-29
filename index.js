@@ -136,16 +136,24 @@ class _ {
         return Math.max(...arr);
     }
 
-    // The min method return the minimum value in an array
+    // The min method returns the minimum value in an array
     static min(arr){
         return Math.min(...arr);
     }
+
+    // The sum method returns the sum of all values in an array
+    static sum(arr){
+        return arr.reduce((prev, curr) => {return parseInt(prev) + parseInt(curr)}, 0)
+    }
+
+        // OBJECT METHODS
+    // 
 }
 
 let arr = ['sss','dddd',112,55,'sssss',0, 44, 56];
 
 let arr2 = ['4343','324',112,55,'2322'];
 
-console.log(_.max(arr2));
+console.log(_.sum(arr2));
 
 console.log(arr)
