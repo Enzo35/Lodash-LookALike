@@ -143,17 +143,22 @@ class _ {
 
     // The sum method returns the sum of all values in an array
     static sum(arr){
-        return arr.reduce((prev, curr) => {return parseInt(prev) + parseInt(curr)}, 0)
+        return arr.reduce((prev, curr) => {return parseInt(prev) + parseInt(curr)}, 0);
     }
 
         // OBJECT METHODS
-    // 
+    // The keys method returns an array containing the properties of an object
+    static keys(obj){
+        return Object.keys(obj);
+    }
 }
 
 let arr = ['sss','dddd',112,55,'sssss',0, 44, 56];
 
 let arr2 = ['4343','324',112,55,'2322'];
 
-console.log(_.sum(arr2));
+let obj = {key1: "sss", LLp: "ddsd"}
+
+console.log(_.keys(obj));
 
 console.log(arr)
