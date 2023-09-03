@@ -166,14 +166,19 @@ class _ {
         }
         return rep;
     }
+
+    // The split method returns an array with a string split by a separetor
+    static split(str='', sep, limit){
+        let newArr = str.split(sep);
+        let limited = [];
+
+        if(limit === undefined){
+            return newArr;
+        } else {
+            for(let i=0; i < limit; i++){
+                limited.push(newArr[i]);
+            }
+            return limited;
+        }
+    }
 }
-
-let arr = ['sss','dddd',112,55,'sssss',0, 44, 56];
-
-let arr2 = ['4343','324',112,55,'2322'];
-
-let obj = {key1: "sss", LLp: "ddsd"}
-
-console.log(_.repeat('obj', 5));
-
-console.log(arr)
