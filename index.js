@@ -151,6 +151,21 @@ class _ {
     static keys(obj){
         return Object.keys(obj);
     }
+
+    // The values method returns an array containing the values of an object
+    static values(obj){
+        return Object.values(obj);
+    }
+
+        // STRING METHODS
+    // The repeat method returns a string that as been duplicated a certain number of times
+    static repeat(str='', n=1){
+        let rep = '';
+        for(let i = 0; i < n; i++){
+            rep += str;
+        }
+        return rep;
+    }
 }
 
 let arr = ['sss','dddd',112,55,'sssss',0, 44, 56];
@@ -159,6 +174,6 @@ let arr2 = ['4343','324',112,55,'2322'];
 
 let obj = {key1: "sss", LLp: "ddsd"}
 
-console.log(_.keys(obj));
+console.log(_.repeat('obj', 5));
 
 console.log(arr)
